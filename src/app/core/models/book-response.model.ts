@@ -43,6 +43,9 @@ export interface Book {
   public_scan: boolean;
   has_fulltext: boolean;
   availability: Availability;
+  author_name: any;
+  author_key: any;
+  
 }
 
 export interface BookResponse {

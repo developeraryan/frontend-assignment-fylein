@@ -27,4 +27,8 @@ export class ApiService {
     const apiPath = `${ROOT_URL}${url}`;
     return this.httpClient.delete<T>(apiPath, config);
   }
+  searchBooks(query: string,offset: Number, limit: Number): Observable<any> {
+    const url = `${ROOT_URL}/search.json?q=${query}&offset=${offset}&limit=${limit}`;
+    return this.httpClient.get(url);
+  }
 }
