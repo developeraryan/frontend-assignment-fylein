@@ -33,11 +33,11 @@ export class HomeComponent implements OnInit {
     this.bookSearch.valueChanges
       .pipe(debounceTime(300))
       .subscribe((value: string) => {
-        this.books =[];
+        this.searchBook = value;
+        this.books = [];
         // console.log(value);
         const offset = 0;
         const limit = 10;
-        this.searchBook = value;
         this.apiService
           .searchBooks(this.searchBook, offset, limit)
           .subscribe((data) => {
